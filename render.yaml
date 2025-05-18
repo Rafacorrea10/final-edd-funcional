@@ -2,8 +2,6 @@ services:
   - type: web
     name: final-edd
     env: python
-    python:
-      version: "3.9.16"  # Versión específica de Python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app --timeout 120
